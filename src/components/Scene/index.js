@@ -30,7 +30,7 @@ function Rig({ zoom, children }) {
 		} 
 
 		if (zoom) {
-			outer.current.rotation = 0;
+			outer.current.rotation.y = 0;
 		}
 		// outer.current.position.y = THREE.MathUtils.lerp(outer.current.position.y, 0, 0.05)
 		// inner.current.rotation.y = Math.sin(clock.getElapsedTime() / 8) * Math.PI
