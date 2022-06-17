@@ -57,7 +57,7 @@ const Scene = ({ zoom }) => {
 		// console.log(cameraRef.current.position)
 		if (zoom && percentageRef.current < 0.99) {
 
-			percentageRef.current += 0.001;
+			percentageRef.current += 0.002;
 
 			let localP = clamp(percentageRef.current, 0, 1);
 
@@ -75,9 +75,9 @@ const Scene = ({ zoom }) => {
 			cameraLookAtRef.current = new THREE.Vector3(p3.x, p3.y, p3.z + 0.1);
 			// cameraRef.current.lookAt(0, 0, 0);
 		} else {
-			cameraRef.current.lookAt(cameraLookAtRef.current);
 		}
 
+			cameraRef.current.lookAt(cameraLookAtRef.current);
 		// if (!zoom && percentageRef.current > 0) {
 		//   percentageRef.current -= 0.00095;
 		// 	var p1 = curvePath.getPointAt(percentageRef.current % 1);
