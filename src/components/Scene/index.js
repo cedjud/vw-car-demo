@@ -101,15 +101,15 @@ const Scene = ({ zoom }) => {
 			<ambientLight intensity={1} />
 			<color attach="background" args={['#ffffff']} />
 			<fog attach="fog" args={['#ffffff', 50, 100]} />
-			{/* <pointLight args={["#404040", 1]} position={[4, 2, 0]} /> */}
-			<pointLight args={["#505050", 10]} position={[-4, 3, -1]} />
+			<pointLight args={["#ffffff", 1]} position={[4, 1, 3]} />
+			<pointLight args={["#ffffff", 1]} position={[-1, 1, -4]} />
 			<directionalLight args={["#ffffff", 5]} castShadow shadow-mapSize-height={512} shadow-mapSize-width={512} />
 			{/* <pointLight  */}
 			{/* <Box castShadow={true} position={} /> */}
-			<mesh>
+			{/* <mesh>
 				<tubeBufferGeometry args={[curvePath, 600, 0.25, 10, false]} />
 				<meshBasicMaterial color="white" transparent opacity={0}/>
-			</mesh>
+			</mesh> */}
 			<Rig zoom={zoom}>
 				{/* <primitive scale={0.001} object={fbx} castShadow /> */}
 				<mesh scale={[50, 40, 1]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
@@ -117,6 +117,7 @@ const Scene = ({ zoom }) => {
 					{/* <meshStandardMaterial color="white" /> */}
 					<meshStandardMaterial transparent opacity={0.6} color="#ffffff" />
 				</mesh>
+
 				<Suspense fallback={<Loader />}>
 					<Car />
 				</Suspense>
